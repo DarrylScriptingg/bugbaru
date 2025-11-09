@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bug WhatsApp - Prank Crash WA</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #075e54; /* Warna hijau WA */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+        }
+        .container {
+            background-color: #128c7e;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            max-width: 400px;
+        }
+        h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .bug-link {
+            background-color: #fff;
+            color: #075e54;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.2em;
+            font-weight: bold;
+            word-break: break-all;
+            margin-bottom: 20px;
+            display: none; /* Sembunyikan dulu */
+        }
+        button {
+            background-color: #25d366; /* Hijau tombol WA */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 10px;
+        }
+        button:hover {
+            background-color: #128c7e;
+        }
+        .copy-btn {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+        .copy-btn:hover {
+            background-color: #fdd835;
+        }
+        .warning {
+            font-size: 0.9em;
+            color: #ffcc00;
+            margin-top: 20px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛑 Bug WhatsApp</h1>
+        <p>Kirim link ini ke temanmu via WA untuk prank crash app mereka! (Hanya Android lama, fix via WA Web)</p>
+        <div id="linkDisplay" class="bug-link"></div>
+        <button onclick="generateBug()">Generate Link Bug</button>
+        <button id="copyBtn" class="copy-btn" onclick="copyToClipboard()" style="display: none;">Salin Link</button>
+        <div class="warning">⚠️ Hanya prank! Jangan spam. Update WA untuk hindari bug.</div>
+    </div>
+
+    <script>
+        function generateBug() {
+            const link = 'https://wa.me/settings';
+            document.getElementById('linkDisplay').textContent = link;
+            document.getElementById('linkDisplay').style.display = 'block';
+            document.getElementById('copyBtn').style.display = 'inline-block';
+        }
+
+        function copyToClipboard() {
+            const link = document.getElementById('linkDisplay').textContent;
+            navigator.clipboard.writeText(link).then(() => {
+                alert('Link bug disalin! Kirim ke WA sekarang.');
+            }).catch(() => {
+                alert('Gagal salin, copy manual ya!');
+            });
+        }
+    </script>
+</body>
+</html>
